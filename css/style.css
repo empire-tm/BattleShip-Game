@@ -1,0 +1,829 @@
+/* Фикс для единого отображения отступов элементов во всех браузерах */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 16px/20px Calibri, Arial, sans-serif;
+	color: black;
+	background-color: #d1d9e4;
+	min-width: 400px;
+}
+
+audio{
+	visibility: hidden;
+	opacity: 0;
+}
+
+
+
+
+/* ------- Запрет на выделение элементов ------- */
+body *{
+	-moz-user-select: -moz-none;
+	-o-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+input[type="text"]{
+	cursor: text;
+}
+
+a,
+input[type="button"]{
+	cursor: pointer;
+}
+
+#computer-field td{
+	cursor: pointer;
+}
+
+#computer-field td:hover{
+	background-color: #EFEFEF;
+	background-color: rgba(0, 0, 0, .1);
+}
+
+
+
+
+/* ------- Цвет выделенного текста ------- */
+::-moz-selection {
+	background: #ff764c;
+	color: white;
+}
+::-webkit-selection {
+	background: #ff764c;
+	color: white;
+}
+::selection {
+	background: #ff764c;
+	color: white;
+}
+
+
+
+
+/* ------- Типографика ------- */
+h1{
+	font-size: 1.4em;
+	line-height: 1.8em;
+	margin-top: 16px;
+	margin-bottom: 8px;
+	font-weight: normal !important;
+	text-transform: uppercase;
+}
+
+p{
+	line-height: 1.5em;
+    margin-bottom: 8px;
+}
+
+a{
+	font-size: 1.125em;
+	color: #ff764c;
+	line-height: 1.8em;
+	text-transform: uppercase;
+}
+
+.text-center{
+	text-align: center !important;
+}
+
+
+
+
+/* ------- Кнопки и поле для ввода текста ------- */
+input[type="button"],
+input[type="text"]{
+	border: none;
+	font-size: 1em;
+	padding: 16px 30px;
+	margin: 10px 5px;
+	border-radius: 40px;
+	color: #9daabd;
+	background: transparent;
+	outline: none;
+	text-align: center;
+
+	-webkit-appearance:none;  /* Убираем тень на iOS устройствах*/
+	
+	-webkit-box-shadow: inset 0 0 0 2px #ccd3de;
+	-moz-box-shadow: inset 0 0 0 2px #ccd3de;
+	-ms-box-shadow: inset 0 0 0 2px #ccd3de;
+	box-shadow: inset 0 0 0 2px #ccd3de;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+input[type="button"]{
+	cursor: pointer;
+}
+
+
+input[type="button"]:focus{
+	color: #699eed;
+}
+
+input[type="button"]:hover{
+	background-color: #687280;
+	-webkit-box-shadow: inset 0 0 0 2px #687280;
+	-moz-box-shadow: inset 0 0 0 2px #687280;
+	-ms-box-shadow: inset 0 0 0 2px #687280;
+	box-shadow: inset 0 0 0 2px #687280;
+	color: white;
+}
+
+input[type="button"]:focus:hover{
+	-webkit-box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+	-moz-box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+	-ms-box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+	box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+
+input[type="button"].primary{
+	background: #699eed;
+	-webkit-box-shadow: inset 0 0 0 2px transparent;
+	-moz-box-shadow: inset 0 0 0 2px transparent;
+	-ms-box-shadow: inset 0 0 0 2px transparent;
+	box-shadow: inset 0 0 0 2px transparent;
+	color: white;
+}
+
+input[type="button"]:hover.primary{
+	background-color: #687280;
+	color: white;
+}
+
+input[type="text"]:focus,
+input[type="button"]:focus{
+	-webkit-box-shadow: inset 0 0 0 2px #699eed;
+	-moz-box-shadow: inset 0 0 0 2px #699eed;
+	-ms-box-shadow: inset 0 0 0 2px #699eed;
+	box-shadow: inset 0 0 0 2px #699eed;
+}
+
+input[type="button"]:focus.primary{
+	-webkit-box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+	-moz-box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+	-ms-box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+	box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+
+input[type="text"]{
+	color: #656565;
+	background: #F5F6F9;
+}
+
+input[type="text"].error{
+	-webkit-box-shadow: inset 0 0 0 2px #FF9393;
+	-moz-box-shadow: inset 0 0 0 2px #FF9393;
+	-ms-box-shadow: inset 0 0 0 2px #FF9393;
+	box-shadow: inset 0 0 0 2px #FF9393;
+	background-color: #FFF0F0;
+	
+	-webkit-animation: shake .2s 1 ease;
+	-moz-animation: shake .2s 1 ease;
+	animation: shake .2s 1 ease;
+}
+
+@-webkit-keyframes shake {
+	0% {
+		-webkit-transform: translateX(-4px);
+	}
+	25% {
+		opacity: 0;
+		-webkit-transform: translateX(4px);
+	}
+	50% {
+		-webkit-transform: translateX(-4px);
+	}
+	75% {
+		-webkit-transform: translateX(4px);
+	}
+	100% {
+		-webkit-transform: translateX(0px);
+	}
+}
+
+@-moz-keyframes shake {
+	0% {
+		-moz-transform: translateX(-4px);
+	}
+	25% {
+		-moz-transform: translateX(4px);
+	}
+	50% {
+		-moz-transform: translateX(-4px);
+	}
+	75% {
+		-moz-transform: translateX(4px);
+	}
+	100% {
+		-moz-transform: translateX(0px);
+	}
+}
+
+@keyframes shake {
+	0% {
+		transform: translateX(-4px);
+	}
+	25% {
+		transform: translateX(4px);
+	}
+	50% {
+		transform: translateX(-4px);
+	}
+	75% {
+		transform: translateX(4px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+.input-info{
+	color: #699EED;
+	font-size: 16px;
+	padding: 0px 20px;
+	visibility: hidden;
+	opacity: 0;
+	height: 0px;
+	-webkit-transition: all .3s .5s ease;
+	-moz-transition: all .3s .5s ease;
+	-ms-transition: all .3s .5s ease;
+	transition: all .3s .5s ease;
+}
+
+.input-info.show{
+	visibility: visible;
+	height: 44px;
+	padding: 10px 0px;
+	opacity: 1;
+}
+
+
+
+
+/* ------- Контент ------- */
+#game-window{
+	max-width: 960px;
+	margin: 0 auto;
+	background-color: #FFF;
+	margin-top: 33px;
+	padding-bottom: 20px;
+	-webkit-box-shadow: 0px 10px 27px 0px rgba(111, 137, 173, 0.24);
+	-moz-box-shadow: 0px 10px 27px 0px rgba(111, 137, 173, 0.24);
+	-ms-box-shadow: 0px 10px 27px 0px rgba(111, 137, 173, 0.24);
+	box-shadow: 0px 10px 27px 0px rgba(111, 137, 173, 0.24);
+	position: relative;
+	border-radius: 4px;
+}
+
+#game-wrap{
+	position: relative;
+	display: block;
+	max-width: 960Px;
+	margin: 40px auto;
+	text-align: center;
+}
+
+
+
+
+/* ------- Логотип ------- */
+#logo{
+	text-decoration: none;
+	color: #656565;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+}
+
+#logo svg{
+	border: none;
+}
+
+/* Фикс для IE8, чтобы не отображались 
+   рамки у картинки */
+svg{
+	border: none;
+}
+
+
+
+
+/* ------- Главное меню ------- */
+#main-menu{
+	width: 100%;
+	text-align: center;
+	display: block;
+	padding: 40px 0px;
+}
+
+.menu-wrap{
+	text-align: center;
+	width: 280px;
+	display: inline-block;
+	color: #808080;
+	margin-top: 10px;
+}
+
+.menu-wrap input{
+	width: 100%;
+	margin: 10px 0px;
+	text-transform: uppercase;
+}
+
+
+
+
+/* ------- Шапка ------- */
+.game-header{
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-color: #699eed;
+	border-radius: 4px 4px 0px 0px;
+}
+
+.game-header *{
+	color: white !important;
+}
+
+.game-header .header-left-btn{
+	position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.arrow-left{
+	margin-left: 30px;
+	background: url('../img/arrow-left.svg') 16px 50% no-repeat !important;
+	padding-left: 40px !important;
+}
+
+
+.game-header .header-left-btn input[type="button"]{
+	padding: 14px 20px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+}
+
+.game-header .header-left-btn input[type="button"]:hover {
+    background-color: #5088DC !important;
+    border-radius: 3px;
+}
+
+
+
+
+/* ------- Счет игры ------- */
+#score{
+	max-width: 500px;
+	margin: 0 auto;
+	position: relative;
+	padding: 20px 0px;
+}
+
+#score *{
+	clear: both;
+	position: relative;
+}
+
+#score-player-name,
+#score-computer-name{
+	position: absolute;
+	top: 0px;
+	font-size: 1.125em;
+	text-transform: uppercase;
+	padding: 20px 10px;
+	max-width: 35%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#score-player-name{
+	left: 0px;
+}
+
+#score-game{
+	font-size: 2em;
+	text-align: center;
+}
+
+#score-computer-name{
+	right: 0px;
+}
+
+
+
+
+/* ------- Статус игры ------- */
+#game-status{
+	text-align: center;
+	width: 100%;
+	margin-top: 10px;
+	font-size: 1.125em;
+	color: #699eed;
+}
+
+#game-status.computer-step{
+	color: #7B7B7B !important;
+}
+
+
+/* ------- Поле боя ------- */
+.battle-field
+{
+	position: relative;
+	display: inline-block;
+	clear: both;
+}
+
+.battle-field{
+	margin-top: 30px;
+}
+
+.battle-field table{
+    border-collapse: collapse;
+    cursor: default;
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.battle-field table td{
+    position: relative;
+	width: 2em;
+    height: 2em;
+    border: solid 1px #CCCCDB;
+    border-spacing: 0px;
+}
+
+/* Маркеры для обозначения
+ столбцов и строк таблицы */
+.marker-row{
+    left: -3em;
+    width: 2em;
+    text-align: right;
+    top: 0.5em;
+    height: 1em;
+}
+
+.marker-col{
+    top: -2em;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.marker-row,
+.marker-col{
+    position: absolute;
+    font-size: 13px;
+}
+
+
+.battle-field table{
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+}
+
+.block-player{
+	opacity: 0.7;
+}
+
+
+
+
+/* ------- Корабль ------- */
+.ship{
+    background: #87b1f1;
+    z-index: 101;
+}
+
+.ship:after{
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	-webkit-box-shadow: 0 0 0 1px #739cda;
+	-moz-box-shadow: 0 0 0 1px #739cda;
+	-ms-box-shadow: 0 0 0 1px #739cda;
+	box-shadow: 0 0 0 1px #739cda;
+	top: 0px;
+	left: 0px;
+	content: "";
+}
+
+
+
+
+/* ------- Мимо ------- */
+.missed{
+    background: #e1ebfb url('../img/point.svg') 50% 50% no-repeat !important;
+    z-index: 100;
+}
+
+.missed:after{
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	-webkit-box-shadow: 0 0 0 1px #CCCCDB;
+	-moz-box-shadow: 0 0 0 1px #CCCCDB;
+	-ms-box-shadow: 0 0 0 1px #CCCCDB;
+	box-shadow: 0 0 0 1px #CCCCDB;
+	top: 0px;
+	left: 0px;
+	content: "";
+}
+
+.last-missed{
+	background-color: #E1FBF0 !important;
+}
+
+
+
+
+/* ------- Подбитый корабль ------- */
+.hit{
+	background: #ff6262 !important;
+	border-color: #E83333;
+	z-index: 200;
+}
+
+.hit:after{
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	-webkit-box-shadow: 0 0 0 1px #E83333;
+	-moz-box-shadow: 0 0 0 1px #E83333;
+	-ms-box-shadow: 0 0 0 1px #E83333;
+	box-shadow: 0 0 0 1px #E83333;
+	top: 0px;
+	left: 0px;
+	content: "";
+}
+
+.smoke{
+	position: absolute;
+	width: 64px;
+	height: 64px;
+	background: url('../img/smoke-sprites.png') 64px 0px no-repeat;
+	-webkit-animation: boom .5s steps(10, end) 1;
+	-moz-animation: boom .5s steps(10, end) 1;
+	animation: boom .5s steps(10, end) 1;
+    top: 50%;
+    left: 50%;
+    margin-top: -32px;
+    margin-left: -32px;
+    cursor: pointer;
+    pointer-events: none;
+	z-index: 700;
+}
+
+@-webkit-keyframes boom {
+	0% {
+		background-position: 0px 0px;
+	}
+
+	100% {
+		background-position: -640px 0px;
+	}
+}
+
+@-moz-keyframes boom {
+	0% {
+		background-position: 0px 0px;
+	}
+
+	100% {
+		background-position: -640px 0px;
+	}
+}
+
+@keyframes boom {
+	0% {
+		background-position: 0px 0px;
+	}
+
+	100% {
+		background-position: -640px 0px;
+	}
+}
+
+
+
+
+/* Фикс чтобы взрыв не уходил под ячейки, а всегда был впереди*/
+.ahead{
+	z-index: 210 !important;
+}
+
+
+
+
+/* ------- Уничтоженный корабль ------- */
+.kill{
+	background: #ff6262 url('../img/hit.svg') 50% 50% no-repeat !important;
+}
+
+
+
+
+/* ------- Фикс для FireFox, чтоб из ячеек не торчали псевдоэлементы ------- */
+@-moz-document url-prefix()
+{
+	.missed:after,
+	.hit:after,
+	.ship:after{
+		top: -1px !important;
+		left: -1px !important;
+	}
+}
+
+
+
+
+/* ------- Окно с сообщением о завершении игры ------- */
+.message-end-game{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	background-color: white;
+	z-index: 999;
+	display: none;
+	opacity: 0;
+}
+
+.message-end-game .message-box{
+	width: 240px;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -120px;
+}
+
+.message-end-game h1{
+	font-size: 1.8em;
+    margin: 0;
+}
+.message-end-game p{
+    font-size: 1.125em;
+    color: #808080;
+}
+
+.message-end-game input{
+	width: 100%;
+	margin: 6px 0;
+}
+
+body.game-win .message-end-game,
+body.game-losing .message-end-game{
+	display: block;
+	opacity: 1;
+}
+
+#game-win,
+#game-losing{
+	display: none;
+	opacity: 0;
+}
+
+
+
+/* ------- Режимы игры ------- */
+/* Главное меню */
+#main-menu,
+#game-wrap{
+	display: none;
+}
+
+body.show-main-menu #main-menu{
+	display: block;
+}
+
+body.show-main-menu #game-window{
+	top: 50%;
+	width: 540px;
+	left: 50%;
+	position: absolute;
+	display: block;
+	margin-top: -270px;
+	margin-left: -270px;
+}
+
+/* Игра запущена*/
+body.play-game #game-wrap,
+body.game-win #game-wrap,
+body.game-losing #game-wrap{
+	display: block;
+}
+
+body.game-win #game-win,
+body.game-losing #game-losing{
+	display: block;
+	opacity: 1;
+}
+
+
+
+
+/* ------- Индикатор загрузки игры ------- */
+.loading{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 800;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	background: white url(../img/loading.gif) 50% 50% no-repeat;
+}
+
+
+
+
+
+
+/* ------- Адаптация под экраны ------- */
+@media (max-width: 960px) {
+	body.play-game #game-window{
+		top: 0 !important;
+	    left: 0 !important;
+	    width: 100% !important;
+	    margin: 0 !important;
+	    -webkit-box-shadow: none !important;
+	    -moz-box-shadow: none !important;
+	    -ms-box-shadow: none !important;
+	    box-shadow: none !important;
+	}
+
+	body.play-game #game-wrap{
+		margin: 0 !important;
+	}
+
+	body.play-game .game-header .header-left-btn{
+		left: 0px;
+	}
+
+	body.play-game .game-header{
+		border-radius: 0px;
+	}
+}
+
+@media (max-width: 540px) {
+
+	body{
+		background-color: white;
+	}
+
+	#game-window{
+		top: 0 !important;
+	    left: 0 !important;
+	    width: 100% !important;
+	    margin: 0 !important;
+	    -webkit-box-shadow: none !important;
+	    -moz-box-shadow: none !important;
+	    -ms-box-shadow: none !important;
+	    box-shadow: none !important;
+	}
+
+	#game-wrap{
+		margin: 0 !important;
+	}
+
+	.game-header .header-left-btn{
+		left: 0px;
+	}
+
+	.game-header{
+		border-radius: 0px;
+	}
+}
+

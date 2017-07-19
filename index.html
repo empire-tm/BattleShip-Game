@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Морской бой</title>
+	<!-- Подключаем стиль -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" type="text/css" href="css/style-ie.css">
+	<![endif]-->
+
+	<!-- Подключаем библиотеку jQuery, IE8 поддерживает только jQuery v1.X.X-->
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<!-- Подключаем скрипт игры -->
+	<script src="js/battle-ship-game.js"></script>
+</head>
+<body class="show-main-menu">
+	<div id="game-window">
+		<!-- ГЛАВНОЕ МЕНЮ -->
+		<div id="main-menu">
+			<form id="start-game-form" class="menu-wrap">
+				<!-- ЛОГОТИП -->
+				<div  id="logo">
+					<!-- Конструкция для отображения логотипа в браузерах,
+						которые не поддерживают SVG -->
+					<svg width="231" height="98">
+						<image xlink:href="img/logo.svg" src="img/logo.png" width="231" height="98"/>
+					</svg>
+					<h1 class="text-center">Морской бой</h1>
+				</div>
+
+				<!-- ПОЛЕ ДЛЯ ВВОДЕ ИМЕНИ ИГРОКА -->
+				Введите имя игрока:
+				<input type="text" id="player-name-input">
+
+				<!-- ПОДСКАЗКА ДЛЯ ВВОДА КОРРЕКТНОГО ИМЕНИ ИГРОКА -->
+				<div class="input-info" id="player-name-input-info">
+					Имя игрока может содержать только буквы, цифры, точки и пробелы.
+				</div>
+
+				<!-- КНОПКА НАЧАЛА ИГРЫ -->
+				<input type="button" value="Начать игру" class="start-game-btn primary">
+
+				<!-- ССЫЛКА НА ПРАВИЛА ИГРЫ -->
+				<a href="https://ru.wikipedia.org/wiki/Морской_бой_(игра)" target="_blank">Правила игры</a>
+			</form>
+		</div>
+		
+		<div id="game-wrap">
+			
+			<div class="loading"></div>
+
+			<div class="message-end-game">
+				<div class="message-box">
+					<div id="game-win">
+						<svg width="128" height="80">
+							<image xlink:href="img/star.svg" src="img/star.png" width="128" height="80"/>
+						</svg>
+						<h1>Победа!</h1>
+						<p>Противник повержен</p>
+					</div>
+					<div id="game-losing">
+						<svg width="80" height="80">
+							<image xlink:href="img/losing.svg" src="img/losing.png" width="80" height="80"/>
+						</svg>
+						<h1>Проигрыш</h1>
+						<p>Ваш флот разгромлен</p>
+					</div>
+					
+					<input type="button" value="Сыграть ещё раз" class="primary start-game-btn">
+					<input type="button" value="Выйти" class="exit-game-btn">
+				</div>
+			</div>
+
+			<div class="game-header">
+				<div class="header-left-btn">
+					<input type="button" value="Назад" class="exit-game-btn arrow-left">
+				</div>
+
+				<div  id="logo">
+					<h1 class="text-center">Морской бой</h1>
+				</div>
+
+				<div id="score">
+					<div id="score-player-name">Джек Воробей</div>
+					<div id="score-game">0 : 0</div>
+					<div id="score-computer-name">Компьютер</div>
+				</div>
+			</div>
+			
+			<div class="game-wrap">
+				<div id="game-status">Сейчас ваш ход</div>
+				
+				<div class="battle-field">
+					<table id="player-field"></table>
+					<p class="text-center">Ваше поле</p>
+				</div>
+
+				<div class="battle-field">
+					<table id="computer-field"></table>
+					<p class="text-center">Компьютер</p>
+				</div>
+
+			</div>
+			<input type="button" value="Новая игра" class="new-game-btn">
+
+		</div>
+
+
+	</div>
+
+	<audio><source src="audio/boom.mp3" type="audio/mpeg"></audio>
+	<audio><source src="audio/missed.mp3" type="audio/mpeg"></audio>
+</body>
+</html>

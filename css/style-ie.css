@@ -1,0 +1,17 @@
+.arrow-left{
+	background: url('../img/arrow-left.png') 16px 50% no-repeat !important;
+}
+
+
+
+.missed{
+    background: #e1ebfb url('../img/point.png') 50% 50% no-repeat !important;
+}
+
+.last-missed{
+	background-color: #E1FBF0 !important;
+}
+
+.kill{
+	background: #ff6262 url('../img/hit.png') 50% 50% no-repeat !important;
+}
