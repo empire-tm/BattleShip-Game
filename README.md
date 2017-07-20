@@ -1,5 +1,6 @@
 # BattleShip-Game
 Игра морской бой
 
-
-[![YouTube video](http://img.youtube.com/vi/fx4gUa54I_k/0.jpg)](http://www.youtube.com/watch?v=fx4gUa54I_k)
+<a href="https://vimeo.com/226207404" target="_blank">
+  <img src="https://i.vimeocdn.com/video/645751560_1560x878.webp" alt="Watch video on VIMEO" width="888" height="500" border="10" />
+</a>
